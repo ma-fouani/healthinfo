@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="ImageViewExt">
+        <attr name="url" format="string" />
+    </declare-styleable>
+    <dimen name="big_margin">16dp</dimen>
+    <dimen name="list_item_margin">8dp</dimen>
+    <dimen name="list_item_corner_radius">16dp</dimen>
+    <dimen name="list_item_height">140dp</dimen>
+    <dimen name="list_item_width">320dp</dimen>
+    <dimen name="list_item_text_start_margin">2dp</dimen>
+    <dimen name="list_item_button_margin">4dp</dimen>
+    <dimen name="list_item_text_padding">4dp</dimen>
+    <dimen name="list_item_fav_padding">2dp</dimen>
+    <dimen name="list_item_title_size">15sp</dimen>
+    <dimen name="list_item_tiny_text_size">12sp</dimen>
+    <dimen name="list_item_large_text_size">24sp</dimen>
+    <dimen name="widget_bottom_padding">24dp</dimen>
+</resources>

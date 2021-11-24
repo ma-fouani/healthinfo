@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <data>
+
+        <variable
+            name="postViewModel"
+            type="co.fouani.healthinfo.ui.viewmodels.PostItemViewModel" />
+    </data>
+
+    <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="@dimen/list_item_width"
+        android:layout_height="wrap_content"
+
+        android:layout_margin="@dimen/list_item_margin"
+        android:clickable="true"
+        android:focusable="true"
+        android:onClick="@{postViewModel.onClick}"
+        app:cardCornerRadius="@dimen/list_item_corner_radius"
+        app:cardElevation="2dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="8dp">
+
+            <co.fouani.healthinfo.utils.customviews.ImageViewExt
+                android:id="@+id/image"
+                android:layout_width="100dp"
+                android:layout_height="0dp"
+                android:scaleType="centerInside"
+                app:layout_constraintDimensionRatio="1:1"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:url="@{postViewModel.post.thumbnail}"
+                tools:src="@drawable/no_image" />
+
+            <TextView
+                android:id="@+id/title"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/list_item_text_start_margin"
+                android:maxLines="2"
+                android:padding="@dimen/list_item_text_padding"
+                android:text="@{postViewModel.post.title}"
+                android:textSize="@dimen/list_item_title_size"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/image"
+                app:layout_constraintTop_toTopOf="@id/image"
+                tools:text="Monitoring Your Blood Pressure At Home" />
+
+            <TextView
+                android:id="@+id/description"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/list_item_text_start_margin"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:padding="@dimen/list_item_text_padding"
+                android:text="@{postViewModel.post.description}"
+                android:textSize="@dimen/list_item_tiny_text_size"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/image"
+                app:layout_constraintTop_toBottomOf="@id/title"
+                tools:text="Blood Pressure Measurement is very important" />
+
+            <TextView
+                android:id="@+id/duration"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/list_item_text_start_margin"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:padding="@dimen/list_item_text_padding"
+                android:text="@{postViewModel.post.duration}"
+                android:textSize="@dimen/list_item_tiny_text_size"
+                app:layout_constraintBottom_toBottomOf="@id/image"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/image"
+                tools:text="1 m" />
+
+            <ImageView
+                android:id="@+id/fav_button"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_margin="@dimen/list_item_button_margin"
+                android:clickable="true"
+                android:focusable="true"
+                android:onClick="@{postViewModel.inActive}"
+                android:padding="@dimen/list_item_fav_padding"
+                android:src="@drawable/ic_favorite"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/image" />
+
+            <ProgressBar
+                style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="4dp"
+                android:max="@{postViewModel.post.total}"
+                android:paddingStart="20dp"
+                android:progress="@{postViewModel.post.progress}"
+                android:progressTint="@color/purple_200"
+                android:visibility="@{postViewModel.getProgressVisibility}"
+                app:layout_constraintBottom_toBottomOf="@id/fav_button"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/fav_button"
+                app:layout_constraintTop_toTopOf="@id/fav_button"
+                tools:max="10"
+                tools:progress="2" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+</layout>

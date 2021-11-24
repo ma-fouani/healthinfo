@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_navigation"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="co.fouani.healthinfo.ui.fragments.HomeFragment"
+        android:label="HomeFragment">
+        <action
+            android:id="@+id/startYouTubeFragment"
+            app:destination="@id/youTubeFragment">
+
+        </action>
+        <action
+            android:id="@+id/startPDFReader"
+            app:destination="@id/PDFFragment" />
+        <action
+            android:id="@+id/action_start_fit"
+            app:destination="@id/fitFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_dummyFragment"
+            app:destination="@id/dummyFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/youTubeFragment"
+        android:name="co.fouani.healthinfo.ui.fragments.YouTubeFragment"
+        android:label="Watch">
+
+        <argument
+            android:name="post"
+            android:defaultValue="@null"
+            app:argType="co.fouani.healthinfo.data.models.Post"
+            app:nullable="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/PDFFragment"
+        android:name="co.fouani.healthinfo.ui.fragments.PDFFragment"
+        android:label="Read">
+
+        <argument
+            android:name="post"
+            android:defaultValue="@null"
+            app:argType="co.fouani.healthinfo.data.models.Post"
+            app:nullable="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/fitFragment"
+        android:name="co.fouani.healthinfo.ui.fragments.FitFragment"
+        android:label="Be Fit" />
+    <fragment
+        android:id="@+id/dummyFragment"
+        android:name="co.fouani.healthinfo.ui.fragments.DummyFragment"
+        android:label="fragment_dummy"
+        tools:layout="@layout/fragment_dummy">
+        <action
+            android:id="@+id/action_dummyFragment_to_homeFragment"
+            app:destination="@id/homeFragment"
+            app:launchSingleTop="true"
+            app:popUpTo="@+id/homeFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+</navigation>
