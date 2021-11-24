@@ -15,6 +15,9 @@ import co.fouani.healthinfo.ui.widgets.GrandProgressWidget
 import co.fouani.healthinfo.ui.widgets.PostsRowWidget
 import co.fouani.healthinfo.utils.Utility
 import co.fouani.healthinfo.utils.Utility.exists
+import android.graphics.Bitmap
+import android.graphics.Canvas
+
 
 class HomeFragment : Fragment() {
     lateinit var binding: FragmentHomeBinding

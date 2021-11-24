@@ -7,67 +7,79 @@
             name="grandProgress"
             type="co.fouani.healthinfo.data.models.GrandProgress" />
     </data>
-<RelativeLayout
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content">
 
-    <androidx.cardview.widget.CardView
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        xmlns:tools="http://schemas.android.com/tools"
+    <RelativeLayout
+        android:id="@+id/main_content"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="wrap_content">
 
-        android:layout_margin="@dimen/big_margin"
-        android:clickable="true"
-        android:focusable="true"
-        app:cardCornerRadius="@dimen/list_item_corner_radius"
-        app:cardElevation="2dp">
-
-        <LinearLayout
+        <androidx.cardview.widget.CardView xmlns:app="http://schemas.android.com/apk/res-auto"
+            xmlns:tools="http://schemas.android.com/tools"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_margin="8dp"
-            android:orientation="vertical">
+            android:layout_height="wrap_content"
 
-            <View
+            android:layout_margin="@dimen/big_margin"
+            android:clickable="true"
+            android:focusable="true"
+            app:cardCornerRadius="@dimen/list_item_corner_radius"
+            app:cardElevation="2dp">
+
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="1dp" />
+                android:layout_height="match_parent"
+                android:layout_margin="8dp"
+                android:orientation="vertical">
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/list_item_text_start_margin"
-                android:padding="@dimen/list_item_text_padding"
-                android:text="Great Job!"
-                android:textSize="36sp"
-                android:textStyle="bold" />
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp" />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/list_item_text_start_margin"
-                android:padding="@dimen/list_item_text_padding"
-                android:text="Be informed about your journey!"
-                android:textSize="18sp" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/list_item_text_start_margin"
+                    android:padding="@dimen/list_item_text_padding"
+                    android:text="Great Job!"
+                    android:textSize="36sp"
+                    android:textStyle="bold" />
+
+                <ImageView
+                    android:id="@+id/share"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_gravity="end"
+                    app:tint="@color/black"
+                    android:layout_marginTop="-50dp"
+                    android:paddingTop="4dp"
+                    android:src="@drawable/ic_share" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/list_item_text_start_margin"
+                    android:padding="@dimen/list_item_text_padding"
+                    android:text="Be informed about your journey!"
+                    android:textSize="18sp" />
 
 
-            <ProgressBar
-                style="@style/Widget.AppCompat.ProgressBar.Horizontal"
-                android:layout_width="match_parent"
-                android:layout_height="60dp"
-                android:layout_margin="4dp"
-                android:max="@{grandProgress.total}"
-                android:paddingStart="20dp"
-                android:paddingEnd="20dp"
-                android:progress="@{grandProgress.progress}"
-                android:progressTint="@color/purple_200"
-                app:layout_constraintBottom_toBottomOf="@id/fav_button"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@id/fav_button"
-                app:layout_constraintTop_toTopOf="@id/fav_button"
-                tools:max="10"
-                tools:progress="2" />
-        </LinearLayout>
-    </androidx.cardview.widget.CardView>
-</RelativeLayout>
+                <ProgressBar
+                    style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:layout_margin="4dp"
+                    android:max="@{grandProgress.total}"
+                    android:paddingStart="20dp"
+                    android:paddingEnd="20dp"
+                    android:progress="@{grandProgress.progress}"
+                    android:progressTint="@color/purple_200"
+                    app:layout_constraintBottom_toBottomOf="@id/fav_button"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/fav_button"
+                    app:layout_constraintTop_toTopOf="@id/fav_button"
+                    tools:max="10"
+                    tools:progress="2" />
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+    </RelativeLayout>
 </layout>
